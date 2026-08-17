@@ -39,7 +39,7 @@
     <div class="hero__inner">
       <p class="eyebrow">R&amp;R Consulting</p>
       <h1 class="hero__title">Everything your business needs to build, protect, fund, and be understood.</h1>
-      <p class="hero__subhead">Websites, databases, copywriting, grant writing, and document translation — one consultancy, instead of five different vendors who've never spoken to each other.</p>
+      <p class="hero__subhead">Websites, databases, copywriting, grant writing, and document translation — one consultancy.</p>
       <div class="hero__actions">
         <a href="#contact" class="btn btn--primary">Start a project</a>
         <a href="#services" class="btn btn--ghost">See services <span aria-hidden="true">→</span></a>
@@ -211,8 +211,8 @@
       <p class="eyebrow">Get in touch</p>
       <h2 class="section__title">Let's start the conversation.</h2>
       <p>
-        Tell me a bit about your project — what you need, and roughly when
-        you need it by — and I'll follow up with next steps.
+        Tell us about your project — what you need, and when
+        you need it by — and we'll follow up with next steps.
       </p>
       <p class="contact__note">
         Fill out the form and we'll get back to you within 24 hours.
@@ -260,7 +260,8 @@
 
       <div class="field">
         <label for="service">Service you're interested in</label>
-        <select id="service" name="service">
+        <select id="service" name="service" required>
+          <option value="" selected disabled>Please select a service</option>
           <option>Website</option>
           <option>Database</option>
           <option>Grant Writing</option>
