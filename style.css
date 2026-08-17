@@ -18,8 +18,8 @@
     --radius-md:16px;
     --radius-lg:30px;
     --font-display:'Fraunces', Georgia, serif;
-    --font-body:'IBM Plex Sans', -apple-system, sans-serif;
-    --font-mono:'IBM Plex Mono', 'Courier New', monospace;
+    --font-body:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Segoe UI Mono', 'IBM Plex Mono', monospace;
     --ease:cubic-bezier(.22,.61,.36,1);
     --container:1180px;
   }

@@ -41,11 +41,7 @@
     revealEls.forEach(function(el){ io.observe(el); });
   }
 
-  /* ---------- Multilingual ticker ----------
-     NOTE: these are everyday working translations of "Let's get to work."
-     Since translation accuracy is literally part of what R&R sells,
-     it's worth having each line double-checked by a native speaker
-     before this goes live. */
+  
   var phrases = [
     { lang: 'EN', text: "Let's get to work.", dir: 'ltr' },
     { lang: 'ES', text: 'Manos a la obra.', dir: 'ltr' },
@@ -78,37 +74,11 @@
     }, 3200);
   }
 
+
   /* ---------- Contact form ---------- */
   var form = document.getElementById('contactForm');
   var formNote = document.getElementById('formNote');
-  var TO_EMAIL = 'c23m900@gmail.com';
-
-  form.addEventListener('submit', function(e){
-    e.preventDefault();
-
-    var name = form.name.value.trim();
-    var email = form.email.value.trim();
-    var service = form.service.value;
-    var message = form.message.value.trim();
-
-    if (!name || !email || !message){
-      formNote.textContent = 'Please fill in your name, email, and a short message.';
-      return;
-    }
-
-    var subject = 'New project inquiry — ' + service;
-    var body =
-      'Name: ' + name + '\n' +
-      'Email: ' + email + '\n' +
-      'Service: ' + service + '\n\n' +
-      message;
-
-    var mailtoLink = 'mailto:' + TO_EMAIL +
-      '?subject=' + encodeURIComponent(subject) +
-      '&body=' + encodeURIComponent(body);
-
-    window.location.href = mailtoLink;
-    formNote.textContent = "Your email app should be opening with your message ready. If nothing happens, email us directly at " + TO_EMAIL + ".";
-  });
+  
+  
 
 })();
