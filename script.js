@@ -45,10 +45,10 @@
   var phrases = [
     { lang: 'EN', text: "Let's get to work.", dir: 'ltr' },
     { lang: 'ES', text: 'Manos a la obra.', dir: 'ltr' },
-    { lang: 'FR', text: 'Mettons-nous au travail.', dir: 'ltr' },
-    { lang: 'IT', text: 'Mettiamoci al lavoro.', dir: 'ltr' },
-    { lang: 'PT', text: 'Vamos ao trabalho.', dir: 'ltr' },
-    { lang: 'AR', text: 'لنبدأ العمل.', dir: 'rtl' }
+    { lang: 'FR', text: "C'est parti!", dir: 'ltr' },
+    { lang: 'IT', text: 'Rimbocchiamoci le maniche.', dir: 'ltr' },
+    { lang: 'PT', text: 'Mãos à obra.', dir: 'ltr' },
+    
   ];
   var tickerPhrase = document.getElementById('tickerPhrase');
   var tickerLang = document.getElementById('tickerLang');
