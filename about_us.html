@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>About Us | R&R Consulting</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,400..600&display=swap" rel="stylesheet">
+
+  <meta
+    name="description"
+    content="Learn about the people, experience, and ideas behind R&R Consulting.">
+
+    <header class="nav" id="siteNav">
+  <div class="nav__inner">
+    <a href="index.html#top" class="nav__brand">R<span class="amp">&amp;</span>R <span class="nav__brand-sub">Consulting</span></a>
+    <nav class="nav__links" id="navLinks">
+      <a href="index.html#services">Services</a>
+      <a href="index.html#approach">Approach</a>
+      <a href="index.html#contact" class="nav__cta">Get in touch</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+  <style>
+    /* =========================================================
+       R&R CONSULTING — ABOUT US
+       Styles are scoped to .rr-about so they don't interfere
+       with the rest of your website.
+    ========================================================= */
+
+    .rr-about {
+      --rr-green: #254f3b;
+      --rr-green-dark: #19382a;
+      --rr-gold: #b58a3a;
+      --rr-cream: #f7f4ed;
+      --rr-text: #303a35;
+      --rr-muted: #68716c;
+      --rr-border: #dedbd2;
+
+      color: var(--rr-text);
+      font-family: inherit;
+      line-height: 1.75;
+      background: #fff;
+    }
+
+    .rr-about * {
+      box-sizing: border-box;
+    }
+
+    .rr-about .about-container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+
+
+
+:root{
+--paper:#EFF1EA;
+    --paper-dim:#E2E5DB;
+    --white:#FBFBF8;
+    --ink:#14302B;
+    --ink2:#688a92;
+    --ink-soft:#4A625C;
+    --ink-faint:#7E9089;
+    --brass:#B4863C;
+    --brass-deep:#8C6524;
+    --brass-light:#E4C68C;
+    --border:rgba(20,48,43,0.14);
+    --border-light:rgba(251,251,248,0.18);
+    --shadow:0 24px 48px -28px rgba(20,48,43,0.35);
+    --radius-sm:6px;
+    --radius-md:16px;
+    --radius-lg:30px;
+   --font-display:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+--font-body:'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+--font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', 'Segoe UI Mono', monospace;
+    --ease:cubic-bezier(.22,.61,.36,1);
+    --container:1180px;
+  }
+
+
+ /* ============================================================
+     NAV
+     ============================================================ */
+  .nav{
+    position:fixed;
+    top:0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index:100;
+    background:rgba(239,241,234,0.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--border);
+  }
+  .nav__inner{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:1.1rem clamp(1.25rem, 4vw, 3rem);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .nav__brand{
+    font-family:var(--font-display);
+    font-size:1.28rem;
+    font-weight:700;
+    display:flex;
+    align-items:baseline;
+    gap:.35em;
+    white-space:nowrap;
+  }
+  .nav__brand-sub{
+    font-family:var(--font-mono);
+    font-size:.68rem;
+    font-weight:500;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-left:.15em;
+  }
+  .nav__links{
+    display:flex;
+    align-items:center;
+    gap:2.2rem;
+    font-size:.95rem;
+    font-weight:500;
+  }
+  .nav__links a:not(.nav__cta){
+    position:relative;
+    padding:.2rem 0;
+  }
+  .nav__links a:not(.nav__cta)::after{
+    content:"";
+    position:absolute;
+    left:0;bottom:-2px;
+    width:0;height:1.5px;
+    background:var(--brass);
+    transition:width .3s var(--ease);
+  }
+  .nav__links a:not(.nav__cta):hover::after{width:100%;}
+  .nav__cta{
+    background:var(--ink);
+    color:var(--paper);
+    padding:.65em 1.35em;
+    border-radius:100px;
+    font-weight:600;
+    transition:background .3s var(--ease), transform .3s var(--ease);
+  }
+  .nav__cta:hover{background:var(--brass-deep);transform:translateY(-1px);}
+
+  .nav__toggle{
+    display:none;
+    flex-direction:column;
+    justify-content:center;
+    gap:5px;
+    width:34px;height:34px;
+    background:none;border:none;cursor:pointer;
+  }
+  .nav__toggle span{
+    display:block;height:2px;width:100%;
+    background:var(--ink);
+    transition:transform .3s var(--ease), opacity .3s var(--ease);
+  }
+  .nav.is-open .nav__toggle span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+  .nav.is-open .nav__toggle span:nth-child(2){opacity:0;}
+  .nav.is-open .nav__toggle span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+ /* ============================================================
+     BUTTONS
+     ============================================================ */
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:.5em;
+    font-family:var(--font-body);
+    font-weight:600;
+    font-size:.98rem;
+    padding:.9em 1.6em;
+    border-radius:100px;
+    border:1.5px solid transparent;
+    cursor:pointer;
+    transition:transform .35s var(--ease), background .35s var(--ease), color .35s var(--ease), border-color .35s var(--ease);
+  }
+  .btn--primary{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .btn--primary:hover{
+    background:var(--brass-deep);
+    color:var(--white);
+    transform:translateY(-2px);
+  }
+  .btn--ghost{
+    background:transparent;
+    color:var(--ink);
+    border-color:var(--border);
+  }
+  .btn--ghost:hover{
+    border-color:var(--ink);
+    transform:translateY(-2px);
+  }
+  .btn--ghost span{transition:transform .35s var(--ease);display:inline-block;}
+  .btn--ghost:hover span{transform:translateX(4px);}
+
+/* ============================================================
+     RESPONSIVE
+     ============================================================ */
+  @media (max-width:900px){
+    .nav__links{
+      position:fixed;
+      inset:0 0 auto auto;
+      top:0;
+      right:0;
+      height:100vh;
+      width:min(78vw,320px);
+      background:var(--paper);
+      flex-direction:column;
+      align-items:flex-start;
+      justify-content:center;
+      gap:2rem;
+      padding:2rem;
+      transform:translateX(100%);
+      transition:transform .4s var(--ease);
+      box-shadow:-20px 0 40px rgba(20,48,43,0.15);
+    }
+    .nav.is-open .nav__links{transform:translateX(0);}
+    .nav__toggle{display:flex;}
+    .nav__cta{width:100%;justify-content:center;}
+
+    .about__grid,.contact__grid{grid-template-columns:1fr;}
+    .step{grid-template-columns:min-content 1fr;}
+  }
+
+  @media (max-width:620px){
+    .services__grid{grid-template-columns:1fr;}
+    .hero__watermark{font-size:min(70vw,420px);top:-4%;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:.001ms !important;transition-duration:.001ms !important;}
+  }
+
+ /* ============================================================
+     REVEAL ANIMATION
+     ============================================================ */
+  .reveal{opacity:1;transform:none;}
+  .reveal.reveal-init{opacity:0;transform:translateY(26px);}
+  .reveal.reveal-init.is-visible{
+    opacity:1;transform:none;
+    transition:opacity .7s var(--ease), transform .7s var(--ease);
+  }
+
+/* ============================================================
+     RESET & BASE
+     ============================================================ */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;overflow-x:hidden;}
+  body{
+    font-family:var(--font-body);
+    color:var(--ink);
+    background:var(--);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  img,svg{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  ul,ol{list-style:none;}
+  button,input,select,textarea{font:inherit;color:inherit;}
+  h1,h2,h3{font-family:var(--font-display);font-weight:600;letter-spacing:-0.01em;}
+
+  .skip-link{
+    position:absolute;left:-999px;top:auto;
+    background:var(--ink);color:var(--paper);padding:.8em 1.2em;z-index:200;border-radius:var(--radius-sm);
+  }
+  .skip-link:focus{left:1rem;top:1rem;}
+
+  :focus-visible{outline:2.5px solid var(--brass);outline-offset:3px;}
+
+  .section__inner{
+    max-width:var(--container);
+    margin:0 auto;
+    padding:0 clamp(1.25rem, 4vw, 3rem);
+  }
+
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:.78rem;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--brass-deep);
+    margin-bottom:1rem;
+    font-weight:500;
+  }
+  .eyebrow--light{color:var(--brass-light);}
+
+  .section__title{
+    font-size:clamp(1.9rem, 3.4vw, 2.7rem);
+    line-height:1.15;
+    margin-bottom:1.1rem;
+    max-width:22ch;
+  }
+  .section__title--light{color:var(--paper);}
+
+  .amp{color:var(--brass);font-style:italic;}
+
+
+
+
+
+
+
+
+    /* ---------------------------------------------------------
+       INTRO
+    --------------------------------------------------------- */
+
+    .rr-about .about-intro {
+      padding: 90px 0 70px;
+      background: var(--rr-cream);
+    }
+
+    .rr-about .about-intro-inner {
+      max-width: 850px;
+    }
+
+    .rr-about .eyebrow {
+      display: block;
+      margin-bottom: 15px;
+      color: var(--rr-gold);
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .rr-about h1 {
+      margin: 0 0 25px;
+      color: var(--rr-green-dark);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      line-height: 1.08;
+      font-weight: 700;
+    }
+
+    .rr-about .intro-lead {
+      max-width: 780px;
+      margin: 0;
+      color: var(--rr-muted);
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      line-height: 1.7;
+    }
+
+    /* ---------------------------------------------------------
+       MAIN STORY
+    --------------------------------------------------------- */
+
+    .rr-about .about-story {
+      padding: 85px 0;
+    }
+
+    .rr-about .story-grid {
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .rr-about .story-label {
+      position: sticky;
+      top: 30px;
+    }
+
+    .rr-about .story-label h2 {
+      margin: 0;
+      color: var(--rr-green);
+      font-size: 2rem;
+      line-height: 1.2;
+    }
+
+    .rr-about .story-content p {
+      margin: 0 0 22px;
+      font-size: 1.05rem;
+      color: var(--rr-text);
+    }
+
+    .rr-about .story-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* ---------------------------------------------------------
+       PERSONAL JOURNEY
+    --------------------------------------------------------- */
+
+    .rr-about .journey {
+      padding: 85px 0;
+      background: var(--rr-green);
+      color: white;
+    }
+
+    .rr-about .journey-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .rr-about .journey h2 {
+      margin: 0 0 22px;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .rr-about .journey p {
+      margin: 0 0 20px;
+      color: rgba(255,255,255,0.84);
+      font-size: 1.02rem;
+    }
+
+    .rr-about .journey p:last-child {
+      margin-bottom: 0;
+    }
+
+    .rr-about .journey-highlight {
+      padding: 35px;
+      border-left: 4px solid var(--rr-gold);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .rr-about .journey-highlight p {
+      margin: 0;
+      color: rgba(255,255,255,0.9);
+      font-size: 1.15rem;
+    }
+
+    /* ---------------------------------------------------------
+       DISCIPLINES
+    --------------------------------------------------------- */
+
+    .rr-about .disciplines {
+      padding: 85px 0;
+    }
+
+    .rr-about .section-heading {
+      max-width: 760px;
+      margin-bottom: 45px;
+    }
+
+    .rr-about .section-heading h2 {
+      margin: 0 0 18px;
+      color: var(--rr-green-dark);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .rr-about .section-heading p {
+      margin: 0;
+      color: var(--rr-muted);
+      font-size: 1.05rem;
+    }
+
+    .rr-about .discipline-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .rr-about .discipline {
+      padding: 30px;
+      border: 1px solid var(--rr-border);
+      border-radius: 14px;
+      background: white;
+    }
+
+    .rr-about .discipline h3 {
+      margin: 0 0 12px;
+      color: var(--rr-green);
+      font-size: 1.35rem;
+    }
+
+    .rr-about .discipline p {
+      margin: 0;
+      color: var(--rr-muted);
+    }
+
+    /* ---------------------------------------------------------
+       GRANT WRITING
+    --------------------------------------------------------- */
+
+    .rr-about .grants {
+      padding: 85px 0;
+      background: var(--rr-cream);
+    }
+
+    .rr-about .grants-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: start;
+    }
+
+    .rr-about .grants h2 {
+      margin: 0 0 20px;
+      color: var(--rr-green-dark);
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .rr-about .grants p {
+      margin: 0 0 20px;
+      color: var(--rr-text);
+    }
+
+    .rr-about .grant-points {
+      display: grid;
+      gap: 15px;
+    }
+
+    .rr-about .grant-point {
+      padding: 20px 22px;
+      border-left: 3px solid var(--rr-gold);
+      background: white;
+    }
+
+    .rr-about .grant-point strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--rr-green);
+    }
+
+    .rr-about .grant-point span {
+      color: var(--rr-muted);
+    }
+
+    /* ---------------------------------------------------------
+       COPYWRITING
+    --------------------------------------------------------- */
+
+    .rr-about .copywriting {
+      padding: 85px 0;
+    }
+
+    .rr-about .copywriting-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .rr-about .copy-quote {
+      color: var(--rr-green);
+      font-size: clamp(1.8rem, 4vw, 2.8rem);
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .rr-about .copy-quote::before {
+      content: "“";
+      display: block;
+      color: var(--rr-gold);
+      font-size: 5rem;
+      line-height: 0.6;
+      margin-bottom: 25px;
+    }
+
+    .rr-about .copywriting-content p {
+      margin: 0 0 20px;
+      color: var(--rr-text);
+    }
+
+    /* ---------------------------------------------------------
+       TEAM
+    --------------------------------------------------------- */
+
+    .rr-about .team {
+      padding: 85px 0;
+      background: var(--rr-green-dark);
+      color: white;
+    }
+
+    .rr-about .team h2 {
+      margin: 0 0 20px;
+      color: white;
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+    }
+
+    .rr-about .team-intro {
+      max-width: 800px;
+      margin-bottom: 40px;
+      color: rgba(255,255,255,0.82);
+    }
+
+    .rr-about .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .rr-about .team-card {
+      padding: 28px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .rr-about .team-card h3 {
+      margin: 0 0 10px;
+      color: var(--rr-gold);
+      font-size: 1.2rem;
+    }
+
+    .rr-about .team-card p {
+      margin: 0;
+      color: rgba(255,255,255,0.76);
+      font-size: 0.95rem;
+    }
+
+    /* ---------------------------------------------------------
+       CLOSING
+    --------------------------------------------------------- */
+
+    .rr-about .about-closing {
+      padding: 90px 0;
+      text-align: center;
+    }
+
+    .rr-about .about-closing-inner {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .rr-about .about-closing h2 {
+      margin: 0 0 20px;
+      color: var(--rr-green-dark);
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      line-height: 1.15;
+    }
+
+    .rr-about .about-closing p {
+      margin: 0;
+      color: var(--rr-muted);
+      font-size: 1.08rem;
+    }
+
+    /* ---------------------------------------------------------
+       ANIMATION
+    --------------------------------------------------------- */
+
+    .rr-about .rr-reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .rr-about .rr-reveal.rr-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ---------------------------------------------------------
+       MOBILE
+    --------------------------------------------------------- */
+
+    @media (max-width: 800px) {
+
+      .rr-about .about-intro,
+      .rr-about .about-story,
+      .rr-about .journey,
+      .rr-about .disciplines,
+      .rr-about .grants,
+      .rr-about .copywriting,
+      .rr-about .team,
+      .rr-about .about-closing {
+        padding: 65px 0;
+      }
+
+      .rr-about .story-grid,
+      .rr-about .journey-grid,
+      .rr-about .grants-grid,
+      .rr-about .copywriting-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .rr-about .story-label {
+        position: static;
+      }
+
+      .rr-about .discipline-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .rr-about .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+
+      .rr-about .rr-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       ABOUT US
+  ========================================================== -->
+
+  <main class="rr-about">
+
+    <!-- INTRO -->
+
+    <section class="about-intro">
+      <div class="about-container">
+
+        <div class="about-intro-inner rr-reveal">
+
+          <span class="eyebrow">
+            About R&R Consulting
+          </span>
+
+          <h1>
+            The people behind the work.
+          </h1>
+
+          <p class="intro-lead">
+            R&R Consulting is a multidisciplinary team of developers,
+            grant writers, writers, and creative professionals who
+            believe that good work starts with understanding the bigger
+            picture.
+          </p>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- OUR STORY -->
+
+    <section class="about-story">
+
+      <div class="about-container">
+
+        <div class="story-grid">
+
+          <div class="story-label rr-reveal">
+
+            <span class="eyebrow">
+              Our Story
+            </span>
+
+            <h2>
+              More than technology.
+            </h2>
+
+          </div>
+
+
+          <div class="story-content rr-reveal">
+
+            <p>
+              R&R grew out of a long-standing curiosity about how
+              things work.
+            </p>
+
+            <p>
+              Our senior developer started working with computers around
+              the year 2000, learning C and Visual Basic. A few years
+              later, in school, he continued with Turbo Pascal. What
+              began as an interest in programming quickly became
+              something much bigger: a fascination with how all the
+              different parts of a system connect to one another and
+              eventually become a product that people can actually use.
+            </p>
+
+            <p>
+              That way of thinking has stayed with us. We don't see a
+              website as just a collection of pages, or a database as
+              just a place to store information. We look at how the
+              pieces work together, how people use them, where things
+              become difficult, and how a better system can make
+              someone's work easier.
+            </p>
+
+            <p>
+              Over the years, that interest developed into experience
+              with database development, website development, production
+              systems, graphic design, and organizational technology.
+            </p>
+
+            <p>
+              But technology is only one part of who we are.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- PERSONAL JOURNEY -->
+
+    <section class="journey">
+
+      <div class="about-container">
+
+        <div class="journey-grid">
+
+          <div class="rr-reveal">
+
+            <span class="eyebrow">
+              Technology & Creativity
+            </span>
+
+            <h2>
+              We believe technical work can also be creative.
+            </h2>
+
+            <p>
+              Our senior developer is also an artist, with approximately
+              17 years dedicated to watercolor painting and developing
+              a personal artistic style inspired by Mayan Cosmovision.
+            </p>
+
+            <p>
+              That artistic background has had a real influence on the
+              way we approach technology and design. It taught us to
+              pay attention to composition, balance, detail, color,
+              meaning, and—perhaps most importantly—the experience of
+              the person looking at what we create.
+            </p>
+
+          </div>
+
+
+          <div class="journey-highlight rr-reveal">
+
+            <p>
+              “Being a developer doesn't mean that everything has to
+              be technical. The best solutions often happen when
+              technology, creativity, and an understanding of people
+              come together.”
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- DIFFERENT DISCIPLINES -->
+
+    <section class="disciplines">
+
+      <div class="about-container">
+
+        <div class="section-heading rr-reveal">
+
+          <span class="eyebrow">
+            A Broader Perspective
+          </span>
+
+          <h2>
+            Our experience doesn't come from one field.
+          </h2>
+
+          <p>
+            Over the years, our work and interests have taken us into
+            areas that may seem unrelated at first—but they have all
+            contributed to the way we understand systems today.
+          </p>
+
+        </div>
+
+
+        <div class="discipline-grid">
+
+          <article class="discipline rr-reveal">
+
+            <h3>Permaculture & Agriculture</h3>
+
+            <p>
+              We have spent significant time learning about
+              agriculture, permaculture, and sustainable production
+              systems. These experiences taught us to think about
+              resources, relationships, sustainability, and long-term
+              results.
+            </p>
+
+          </article>
+
+
+          <article class="discipline rr-reveal">
+
+            <h3>Education & Community</h3>
+
+            <p>
+              We have studied different approaches to education across
+              Central America and used that knowledge to support
+              educational initiatives around Lake Atitlán, including
+              efforts focused on sustainable production, nutritious
+              food, and healthier communities.
+            </p>
+
+          </article>
+
+
+          <article class="discipline rr-reveal">
+
+            <h3>Art & Design</h3>
+
+            <p>
+              Years of artistic practice have shaped our approach to
+              graphic design, visual communication, and digital
+              experiences. We care about how something works, but also
+              about how it feels to use and understand.
+            </p>
+
+          </article>
+
+
+          <article class="discipline rr-reveal">
+
+            <h3>Technology & Systems</h3>
+
+            <p>
+              Our technical work brings these perspectives together
+              through websites, databases, digital tools, and
+              production systems designed around the real needs of
+              organizations and businesses.
+            </p>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- GRANT WRITING -->
+
+    <section class="grants">
+
+      <div class="about-container">
+
+        <div class="grants-grid">
+
+          <div class="rr-reveal">
+
+            <span class="eyebrow">
+              Grant Writing
+            </span>
+
+            <h2>
+              Helping good ideas find the support they need.
+            </h2>
+
+            <p>
+              Our grant-writing team brings extensive experience
+              working with organizations across the United States
+              since 2013.
+            </p>
+
+            <p>
+              We understand that grant writing is not simply about
+              writing something that sounds good. A strong proposal
+              needs to explain what an organization is trying to
+              accomplish, why the work matters, who will benefit, how
+              the program will work, and how success will be measured.
+            </p>
+
+            <p>
+              It also needs to make sense financially. The narrative,
+              activities, outcomes, timeline, and budget all need to
+              tell the same story.
+            </p>
+
+            <p>
+              That's why our grant writers work beyond the writing
+              itself. We help organizations organize their ideas,
+              strengthen their program descriptions, develop
+              compelling narratives, and present their work in a way
+              that is clear to funders.
+            </p>
+
+          </div>
+
+
+          <div class="grant-points rr-reveal">
+
+            <div class="grant-point">
+
+              <strong>
+                Understanding the organization
+              </strong>
+
+              <span>
+                We take time to understand your mission, programs,
+                community, and goals before trying to tell your story.
+              </span>
+
+            </div>
+
+
+            <div class="grant-point">
+
+              <strong>
+                Building the story
+              </strong>
+
+              <span>
+                We connect the need, proposed solution, activities,
+                outcomes, and impact into a clear narrative.
+              </span>
+
+            </div>
+
+
+            <div class="grant-point">
+
+              <strong>
+                Connecting the pieces
+              </strong>
+
+              <span>
+                The narrative, program design, outcomes, timeline, and
+                budget should reinforce one another.
+              </span>
+
+            </div>
+
+
+            <div class="grant-point">
+
+              <strong>
+                Supporting the full process
+              </strong>
+
+              <span>
+                Our experience can support organizations beyond the
+                application, including grant management, reporting,
+                documentation, and program evaluation.
+              </span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- COPYWRITING -->
+
+    <section class="copywriting">
+
+      <div class="about-container">
+
+        <div class="copywriting-grid">
+
+          <div class="copy-quote rr-reveal">
+
+            Good communication
+            starts with understanding
+            what you are trying to say.
+
+          </div>
+
+
+          <div class="copywriting-content rr-reveal">
+
+            <span class="eyebrow">
+              Copywriting
+            </span>
+
+            <h2>
+              Making your message sound like you.
+            </h2>
+
+            <p>
+              We also understand that sometimes the challenge isn't
+              the idea—it's finding the right way to explain it.
+            </p>
+
+            <p>
+              Many organizations do important and complicated work.
+              The problem is that the people outside the organization
+              don't always understand it as quickly as the people
+              inside it do.
+            </p>
+
+            <p>
+              Our copywriting work focuses on closing that gap. We
+              create content for websites, organizational materials,
+              proposals, reports, marketing communications, and other
+              professional documents.
+            </p>
+
+            <p>
+              We don't want your content to sound like it was produced
+              by a generic marketing machine. We want it to sound
+              professional while still sounding like <em>you</em>.
+            </p>
+
+            <p>
+              Whether you need to explain a service, tell your
+              organization's story, communicate your mission, or make
+              your website easier for people to understand, we help
+              turn your ideas into clear and meaningful communication.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- OUR TEAM -->
+
+    <section class="team">
+
+      <div class="about-container">
+
+        <span class="eyebrow rr-reveal">
+          Our Team
+        </span>
+
+        <h2 class="rr-reveal">
+          Different backgrounds. Shared curiosity.
+        </h2>
+
+        <p class="team-intro rr-reveal">
+          R&R is not built around one person doing everything. We have
+          a team of developers and grant-writing professionals, along
+          with people who bring experience in different disciplines
+          and languages.
+        </p>
+
+
+        <div class="team-grid">
+
+          <div class="team-card rr-reveal">
+
+            <h3>
+              Developers
+            </h3>
+
+            <p>
+              Our developers work with websites, databases, and
+              technology systems, bringing both technical knowledge
+              and practical problem-solving to each project.
+            </p>
+
+          </div>
+
+
+          <div class="team-card rr-reveal">
+
+            <h3>
+              Grant Writers
+            </h3>
+
+            <p>
+              Our grant-writing professionals bring years of experience
+              working with organizations across the United States and
+              understand the realities of developing competitive
+              proposals.
+            </p>
+
+          </div>
+
+
+          <div class="team-card rr-reveal">
+
+            <h3>
+              Multidisciplinary People
+            </h3>
+
+            <p>
+              Our team members bring different skills, professional
+              experiences, and languages to the table. That diversity
+              helps us look at problems from more than one angle.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- CLOSING -->
+
+    <section class="about-closing">
+
+      <div class="about-container">
+
+        <div class="about-closing-inner rr-reveal">
+
+          <span class="eyebrow">
+            Why R&R
+          </span>
+
+          <h2>
+            We don't just build things.
+            We try to understand them.
+          </h2>
+
+          <p>
+            That is what connects everything we do. Whether we're
+            developing a database, designing a website, writing a
+            grant proposal, or helping an organization communicate
+            what it does, we start by trying to understand the people,
+            the purpose, and the system behind the project.
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <script>
+    /*
+      Simple scroll animation.
+      Everything is scoped to the About Us page.
+    */
+
+    document.addEventListener("DOMContentLoaded", function () {
+
+      const elements = document.querySelectorAll(
+        ".rr-about .rr-reveal"
+      );
+
+      if (
+        window.matchMedia &&
+        window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches
+      ) {
+        elements.forEach(function (element) {
+          element.classList.add("rr-visible");
+        });
+
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        function (entries) {
+
+          entries.forEach(function (entry) {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("rr-visible");
+
+              observer.unobserve(entry.target);
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+      elements.forEach(function (element) {
+        observer.observe(element);
+      });
+
+    });
+  </script>
+
+</body>
+</html>

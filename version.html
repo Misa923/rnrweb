@@ -1,0 +1,1204 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description" content="Learn about R&R Consulting, our multidisciplinary team, and our experience in technology, systems design, grant writing, copywriting, data, and creative development.">
+
+  <title>About Us | R&R Consulting</title>
+
+  <style>
+    /* =========================================================
+       R&R CONSULTING — ABOUT PAGE
+       All CSS is contained in this file.
+    ========================================================= */
+
+    :root {
+      --primary: #1f4d3a;
+      --primary-dark: #163a2c;
+      --accent: #c79a45;
+      --cream: #f7f4ed;
+      --light: #ffffff;
+      --text: #26332d;
+      --muted: #68736d;
+      --border: #e2dfd6;
+      --shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+      --radius: 18px;
+      --max-width: 1150px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background: var(--light);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HERO
+    ========================= */
+
+    .about-hero {
+      position: relative;
+      overflow: hidden;
+      padding: 110px 0 100px;
+      background:
+        linear-gradient(
+          135deg,
+          rgba(31, 77, 58, 0.97),
+          rgba(22, 58, 44, 0.95)
+        );
+      color: white;
+    }
+
+    .about-hero::before {
+      content: "";
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 50%;
+      right: -160px;
+      top: -180px;
+    }
+
+    .about-hero::after {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border: 1px solid rgba(199,154,69,0.25);
+      border-radius: 50%;
+      left: -140px;
+      bottom: -160px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      margin-bottom: 18px;
+      color: var(--accent);
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .about-hero h1 {
+      font-size: clamp(2.7rem, 6vw, 5rem);
+      line-height: 1.05;
+      margin-bottom: 28px;
+      font-weight: 700;
+    }
+
+    .about-hero h1 span {
+      color: var(--accent);
+    }
+
+    .hero-intro {
+      max-width: 760px;
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: rgba(255,255,255,0.88);
+    }
+
+    /* =========================
+       SECTIONS
+    ========================= */
+
+    section {
+      padding: 90px 0;
+    }
+
+    .section-heading {
+      max-width: 750px;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 18px;
+      color: var(--primary-dark);
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    /* =========================
+       INTRO
+    ========================= */
+
+    .intro {
+      background: var(--light);
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .intro-text p {
+      margin-bottom: 20px;
+      color: #4d5953;
+    }
+
+    .highlight-box {
+      background: var(--cream);
+      padding: 40px;
+      border-left: 5px solid var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .highlight-box h3 {
+      color: var(--primary);
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .highlight-box p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       EXPERIENCE
+    ========================= */
+
+    .experience {
+      background: var(--cream);
+    }
+
+    .timeline {
+      position: relative;
+      max-width: 900px;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: 9px;
+      top: 5px;
+      bottom: 5px;
+      width: 2px;
+      background: var(--border);
+    }
+
+    .timeline-item {
+      position: relative;
+      padding-left: 45px;
+      margin-bottom: 42px;
+    }
+
+    .timeline-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .timeline-dot {
+      position: absolute;
+      left: 0;
+      top: 8px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--accent);
+      border: 4px solid var(--cream);
+      box-shadow: 0 0 0 1px var(--accent);
+    }
+
+    .timeline-year {
+      color: var(--accent);
+      font-weight: 700;
+      font-size: 0.9rem;
+      letter-spacing: 1px;
+      margin-bottom: 5px;
+    }
+
+    .timeline-item h3 {
+      color: var(--primary-dark);
+      font-size: 1.45rem;
+      margin-bottom: 8px;
+    }
+
+    .timeline-item p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       CARDS
+    ========================= */
+
+    .cards-section {
+      background: white;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .service-card {
+      padding: 35px 30px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: white;
+      transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        border-color 0.3s ease;
+    }
+
+    .service-card:hover {
+      transform: translateY(-7px);
+      box-shadow: var(--shadow);
+      border-color: rgba(199,154,69,0.5);
+    }
+
+    .card-number {
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 15px;
+      letter-spacing: 1px;
+    }
+
+    .service-card h3 {
+      color: var(--primary);
+      font-size: 1.45rem;
+      margin-bottom: 15px;
+    }
+
+    .service-card p {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    /* =========================
+       GRANT SECTION
+    ========================= */
+
+    .grant-section {
+      background: var(--primary);
+      color: white;
+    }
+
+    .grant-section .section-heading h2 {
+      color: white;
+    }
+
+    .grant-section .section-heading p {
+      color: rgba(255,255,255,0.78);
+    }
+
+    .grant-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 55px;
+    }
+
+    .grant-content p {
+      color: rgba(255,255,255,0.82);
+      margin-bottom: 20px;
+    }
+
+    .grant-list {
+      display: grid;
+      gap: 15px;
+    }
+
+    .grant-item {
+      padding: 18px 20px;
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.05);
+    }
+
+    .grant-item strong {
+      display: block;
+      color: var(--accent);
+      margin-bottom: 3px;
+    }
+
+    /* =========================
+       COPYWRITING
+    ========================= */
+
+    .copywriting {
+      background: var(--cream);
+    }
+
+    .copy-grid {
+      display: grid;
+      grid-template-columns: 0.85fr 1.15fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .quote {
+      font-size: clamp(1.7rem, 3vw, 2.5rem);
+      line-height: 1.3;
+      color: var(--primary-dark);
+      font-weight: 600;
+    }
+
+    .quote-mark {
+      display: block;
+      color: var(--accent);
+      font-size: 5rem;
+      line-height: 0.6;
+      margin-bottom: 25px;
+    }
+
+    .copy-text p {
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* =========================
+       TEAM
+    ========================= */
+
+    .team {
+      background: white;
+    }
+
+    .team-intro {
+      max-width: 800px;
+      margin-bottom: 40px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 25px;
+    }
+
+    .team-card {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--cream);
+      border: 1px solid var(--border);
+    }
+
+    .team-card h3 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+    }
+
+    .team-card p {
+      color: var(--muted);
+    }
+
+    /* =========================
+       FINAL CTA
+    ========================= */
+
+    .final-cta {
+      padding: 100px 0;
+      background:
+        linear-gradient(
+          135deg,
+          var(--primary-dark),
+          var(--primary)
+        );
+      color: white;
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      margin-bottom: 20px;
+    }
+
+    .final-cta p {
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: rgba(255,255,255,0.82);
+      font-size: 1.1rem;
+    }
+
+    .cta-button {
+      display: inline-block;
+      padding: 14px 28px;
+      background: var(--accent);
+      color: white;
+      border-radius: 8px;
+      font-weight: 700;
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    /* =========================
+       SCROLL ANIMATION
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 850px) {
+
+      section {
+        padding: 70px 0;
+      }
+
+      .intro-grid,
+      .grant-content,
+      .copy-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .cards-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-hero {
+        padding: 85px 0 75px;
+      }
+    }
+
+    @media (max-width: 550px) {
+
+      .container {
+        width: min(90%, var(--max-width));
+      }
+
+      .about-hero h1 {
+        font-size: 2.6rem;
+      }
+
+      .highlight-box,
+      .service-card,
+      .team-card {
+        padding: 25px;
+      }
+
+      .timeline-item {
+        padding-left: 35px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================================================
+       HERO
+  ========================================================== -->
+
+  <header class="about-hero">
+    <div class="container">
+      <div class="hero-content reveal">
+
+        <span class="eyebrow">About R&R Consulting</span>
+
+        <h1>
+          Experience across disciplines.
+          <span>Systems built to work.</span>
+        </h1>
+
+        <p class="hero-intro">
+          R&R Consulting brings together technology, creativity,
+          grant writing, communication, and systems thinking to help
+          organizations turn ideas into practical solutions.
+        </p>
+
+      </div>
+    </div>
+  </header>
+
+
+  <!-- =========================================================
+       INTRO
+  ========================================================== -->
+
+  <section class="intro">
+    <div class="container">
+
+      <div class="intro-grid">
+
+        <div class="intro-text reveal">
+
+          <div class="section-heading">
+            <span class="eyebrow">Who We Are</span>
+
+            <h2>
+              We look at the whole system.
+            </h2>
+          </div>
+
+          <p>
+            R&R Consulting was built on a simple idea:
+            good solutions come from understanding the whole system,
+            not just one piece of it.
+          </p>
+
+          <p>
+            Our team brings together professionals with expertise in
+            technology, grant writing, copywriting, design, data,
+            and organizational systems.
+          </p>
+
+          <p>
+            We work across disciplines because real-world projects
+            rarely fit neatly into a single category.
+          </p>
+
+        </div>
+
+        <div class="highlight-box reveal">
+
+          <h3>More than a collection of services.</h3>
+
+          <p>
+            We connect the different pieces of a project so they
+            support one another—from the technology behind your
+            organization to the words you use to communicate your
+            mission and the funding needed to move your work forward.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       TECHNOLOGY EXPERIENCE
+  ========================================================== -->
+
+  <section class="experience">
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">Our Technical Foundation</span>
+
+        <h2>
+          A passion for understanding how systems work.
+        </h2>
+
+        <p>
+          Our senior developer's relationship with technology began
+          more than two decades ago—and developed from programming
+          into a broader understanding of systems, design, and people.
+        </p>
+
+      </div>
+
+
+      <div class="timeline">
+
+        <div class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-year">2000</div>
+
+          <h3>The Beginning</h3>
+
+          <p>
+            Our senior developer began learning programming through
+            C and Visual Basic, developing an early fascination with
+            how individual components of a computer system work
+            together to produce a functioning product.
+          </p>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-year">2004</div>
+
+          <h3>Building a Systems Mindset</h3>
+
+          <p>
+            While studying, Turbo Pascal became another part of the
+            programming journey. The focus was not simply on learning
+            programming languages, but on understanding the logic,
+            architecture, and relationships that make systems work.
+          </p>
+
+        </div>
+
+
+        <div class="timeline-item reveal">
+
+          <div class="timeline-dot"></div>
+
+          <div class="timeline-year">Over the Years</div>
+
+          <h3>From Programming to Systems Design</h3>
+
+          <p>
+            That early passion developed into experience with
+            databases, websites, production systems, graphic design,
+            and digital solutions designed around the needs of real
+            organizations.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       TECHNOLOGY + CREATIVITY
+  ========================================================== -->
+
+  <section class="cards-section">
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">Technology & Creativity</span>
+
+        <h2>
+          Where technical knowledge meets artistic thinking.
+        </h2>
+
+        <p>
+          Technology does not have to be cold or complicated.
+          Our approach combines technical problem-solving with
+          creativity, design, and an understanding of how people
+          interact with information.
+        </p>
+
+      </div>
+
+
+      <div class="cards-grid">
+
+        <article class="service-card reveal">
+
+          <div class="card-number">01</div>
+
+          <h3>Software & Systems</h3>
+
+          <p>
+            Database development, website development, digital
+            systems, and production-system design focused on
+            improving how information and processes work together.
+          </p>
+
+        </article>
+
+
+        <article class="service-card reveal">
+
+          <div class="card-number">02</div>
+
+          <h3>Design</h3>
+
+          <p>
+            Graphic and visual design informed by years of artistic
+            practice, with an emphasis on creating experiences that
+            are functional, clear, and visually meaningful.
+          </p>
+
+        </article>
+
+
+        <article class="service-card reveal">
+
+          <div class="card-number">03</div>
+
+          <h3>Systems Thinking</h3>
+
+          <p>
+            We look beyond individual tools and ask how technology,
+            people, information, processes, and organizational goals
+            can work together more effectively.
+          </p>
+
+        </article>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       SUSTAINABILITY / ART / EDUCATION
+  ========================================================== -->
+
+  <section class="intro">
+    <div class="container">
+
+      <div class="intro-grid">
+
+        <div class="intro-text reveal">
+
+          <div class="section-heading">
+
+            <span class="eyebrow">
+              Beyond Technology
+            </span>
+
+            <h2>
+              Our perspective comes from many disciplines.
+            </h2>
+
+          </div>
+
+          <p>
+            Our experience extends beyond technology. We have explored
+            permaculture, agriculture, education, community development,
+            and sustainable production systems.
+          </p>
+
+          <p>
+            As a watercolor artist with approximately 17 years devoted
+            to developing a personal artistic practice inspired by
+            Mayan Cosmovision, our senior developer brings a unique
+            perspective to the relationship between creativity,
+            culture, systems, and design.
+          </p>
+
+          <p>
+            We have also studied different educational systems across
+            Central America and applied that knowledge to support
+            educational initiatives around Lake Atitlán focused on
+            sustainable production, nutritious food, and healthier
+            school and community environments.
+          </p>
+
+        </div>
+
+
+        <div class="highlight-box reveal">
+
+          <h3>Systems should be sustainable.</h3>
+
+          <p>
+            Whether we are designing a database, a website, an
+            organizational process, or a communication strategy,
+            we believe the best solutions are those that can continue
+            to work, adapt, and create value over time.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- =========================================================
+       GRANT WRITING
+  ========================================================== -->
+
+  <section class="grant-section">
+
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">Grant Writing & Management</span>
+
+        <h2>
+          Turning strong ideas into compelling funding opportunities.
+        </h2>
+
+        <p>
+          Our grant-writing professionals bring extensive experience
+          working with organizations across the United States since
+          2013.
+        </p>
+
+      </div>
+
+
+      <div class="grant-content">
+
+        <div class="reveal">
+
+          <p>
+            Grant writing is more than putting good words on a page.
+            A competitive proposal needs to communicate a clear
+            understanding of the organization's mission, the community
+            it serves, the problem being addressed, and the solution
+            being proposed.
+          </p>
+
+          <p>
+            Our team helps organizations connect those pieces into a
+            coherent and persuasive narrative supported by realistic
+            strategies, measurable outcomes, appropriate budgets,
+            and a clear explanation of why the investment matters.
+          </p>
+
+          <p>
+            We understand that successful grant development requires
+            both strong writing and strong program thinking. Our
+            multidisciplinary approach allows us to help organizations
+            strengthen the substance behind the proposal—not simply
+            the words used to describe it.
+          </p>
+
+        </div>
+
+
+        <div class="grant-list reveal">
+
+          <div class="grant-item">
+            <strong>Grant Research</strong>
+            Identifying funding opportunities aligned with your
+            organization's mission and programs.
+          </div>
+
+          <div class="grant-item">
+            <strong>Proposal Development</strong>
+            Developing narratives, goals, objectives, strategies,
+            outcomes, and supporting documentation.
+          </div>
+
+          <div class="grant-item">
+            <strong>Budget & Program Alignment</strong>
+            Helping ensure that the proposed activities, budget,
+            outcomes, and funding request tell the same story.
+          </div>
+
+          <div class="grant-item">
+            <strong>Grant Management & Reporting</strong>
+            Supporting organizations beyond the application through
+            documentation, reporting, compliance, and program tracking.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       COPYWRITING
+  ========================================================== -->
+
+  <section class="copywriting">
+
+    <div class="container">
+
+      <div class="copy-grid">
+
+        <div class="quote reveal">
+
+          <span class="quote-mark">“</span>
+
+          Good writing isn't just about
+          using the right words.
+          It's about making the right
+          message understood.
+
+        </div>
+
+
+        <div class="copy-text reveal">
+
+          <div class="section-heading">
+
+            <span class="eyebrow">
+              Copywriting & Communication
+            </span>
+
+            <h2>
+              Your ideas deserve to be understood.
+            </h2>
+
+          </div>
+
+          <p>
+            Organizations often have valuable ideas, services, and
+            stories—but communicating them clearly can be difficult,
+            especially when the subject matter is complex.
+          </p>
+
+          <p>
+            Our copywriting approach begins by understanding the
+            audience, the purpose of the communication, and the action
+            you want the reader to take.
+          </p>
+
+          <p>
+            We create clear, engaging, and purposeful content for
+            websites, organizational materials, proposals, reports,
+            marketing communications, and other professional materials.
+          </p>
+
+          <p>
+            Whether you need to explain a complex service, communicate
+            your mission, strengthen your website, or present your work
+            to potential partners and funders, we help turn your ideas
+            into language that people can understand, remember, and act
+            on.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       TEAM
+  ========================================================== -->
+
+  <section class="team">
+
+    <div class="container">
+
+      <div class="section-heading reveal">
+
+        <span class="eyebrow">Our Team</span>
+
+        <h2>
+          Different disciplines. One team.
+        </h2>
+
+      </div>
+
+      <p class="team-intro reveal">
+        R&R Consulting is supported by a multidisciplinary team that
+        includes developers, grant-writing professionals, and other
+        specialists. Our team members bring different professional
+        backgrounds, technical skills, languages, and perspectives
+        to the work we do.
+      </p>
+
+
+      <div class="team-grid">
+
+        <div class="team-card reveal">
+
+          <h3>Technology & Development</h3>
+
+          <p>
+            Our development team works across websites, databases,
+            digital systems, and technology solutions designed around
+            the specific needs of each organization.
+          </p>
+
+        </div>
+
+
+        <div class="team-card reveal">
+
+          <h3>Grant Writing & Strategy</h3>
+
+          <p>
+            Our grant professionals bring years of experience working
+            with organizations across the United States and understand
+            the importance of aligning mission, program design,
+            outcomes, budgets, and funder expectations.
+          </p>
+
+        </div>
+
+
+        <div class="team-card reveal">
+
+          <h3>Writing & Communication</h3>
+
+          <p>
+            Our writing professionals help organizations communicate
+            their ideas clearly across websites, proposals, reports,
+            marketing materials, and other forms of professional
+            communication.
+          </p>
+
+        </div>
+
+
+        <div class="team-card reveal">
+
+          <h3>Multidisciplinary Perspectives</h3>
+
+          <p>
+            Our team members bring experience across different fields
+            and languages, allowing us to approach projects from
+            multiple perspectives and serve organizations with
+            diverse needs and audiences.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       FINAL CTA
+  ========================================================== -->
+
+  <section class="final-cta">
+
+    <div class="container">
+
+      <div class="reveal">
+
+        <h2>
+          Let's build something that works.
+        </h2>
+
+        <p>
+          Whether you need a better website, a stronger database,
+          a competitive grant proposal, or clearer communication,
+          R&R Consulting brings the people and perspectives together
+          to help move your project forward.
+        </p>
+
+        <!-- Change this link to your actual contact page -->
+        <a href="contact.html" class="cta-button">
+          Work With Us
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+       All JS is contained in this file.
+  ========================================================== -->
+
+  <script>
+
+    /*
+     * Simple scroll-reveal animation.
+     * Elements become visible as the visitor scrolls down the page.
+     */
+
+    const revealElements = document.querySelectorAll(".reveal");
+
+    const revealObserver = new IntersectionObserver(
+      (entries, observer) => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("visible");
+
+            observer.unobserve(entry.target);
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+
+    revealElements.forEach(element => {
+      revealObserver.observe(element);
+    });
+
+
+    /*
+     * Accessibility:
+     * Respect visitors who prefer reduced motion.
+     */
+
+    if (
+      window.matchMedia &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
+
+      document.documentElement.style.scrollBehavior = "auto";
+
+      revealElements.forEach(element => {
+        element.classList.add("visible");
+      });
+
+    }
+
+  </script>
+
+</body>
+</html>
